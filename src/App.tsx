@@ -20,6 +20,8 @@ import {
 } from "./components/ui/sheet"
 import { Menu } from 'lucide-react';
 import NavBar from './components/NavBar'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './components/ui/carousel'
+import { Card, CardContent } from "./components/ui/card"
 
 
 
@@ -27,11 +29,11 @@ import NavBar from './components/NavBar'
 const App = () => {
   return (
     <>
-    <div className=" justify-center items-center hidden sm:flex">
-    <NavBar />
-    </div>
-    <div className="flex justify-end  sm:hidden">
-     <Sheet>
+      <div className=" justify-center items-center hidden sm:flex">
+        <NavBar />
+      </div>
+      <div className="flex justify-end  sm:hidden">
+        <Sheet>
           <SheetTrigger>
             <Menu />
           </SheetTrigger>
@@ -43,9 +45,9 @@ const App = () => {
             <NavBar />
           </SheetContent>
         </Sheet>
-        </div>
-        
-      
+      </div>
+
+
       <div className="flex flex-col items-center justify-center ">
         <Field className="flex flex-col items-center justify-center">
           <FieldLabel className="flex flex-col item-center justify-center" htmlFor="input-field-username">Enter Product Name</FieldLabel>
@@ -61,6 +63,28 @@ const App = () => {
         <Button size="default" variant="destructive">Click me
           <ArrowRightIcon />
         </Button>
+      </div>
+
+      <div className="flex justify-center items-center">
+            <Carousel className="w-full max-w-[12rem] sm:max-w-xs md:max-w-sm">
+      <CarouselContent className="-ml-1">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index} className="basis-1/2 pl-1 lg:basis-1/3">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-2xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+
       </div>
     </>
   )
