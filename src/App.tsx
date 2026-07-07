@@ -27,6 +27,13 @@ import { Card, CardContent } from "./components/ui/card"
 
 
 const App = () => {
+  const image = [
+    "yuras.jpg",
+    "yuras.jpg",
+    "yuras.jpg",
+    "yuras.jpg",
+    "yuras.jpg",
+  ];
   return (
     <>
       <div className=" justify-center items-center hidden sm:flex">
@@ -64,16 +71,20 @@ const App = () => {
           <ArrowRightIcon />
         </Button>
       </div>
-
+     
       <div className="flex justify-center items-center">
             <Carousel className="w-full max-w-[12rem] sm:max-w-xs md:max-w-sm">
-      <CarouselContent className="-ml-1">
-        {Array.from({ length: 5 }).map((_, index) => (
+      <CarouselContent className="-ml-1">        
+        {Array.from({ length: 5 ,}) .map((_, index) => (
           <CarouselItem key={index} className="basis-1/2 pl-1 lg:basis-1/3">
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-2xl font-semibold">{index + 1}</span>
+                   <img
+              src={image[index]}
+              alt={`Logo ${index + 1}`}
+              className="h-full w-full object-cover rounded-md"
+            />
                 </CardContent>
               </Card>
             </div>
@@ -92,4 +103,3 @@ const App = () => {
 
 
 export default App
-
