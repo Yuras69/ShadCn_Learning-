@@ -6,7 +6,7 @@ import {
 } from "./components/ui/field"
 import { Button } from './components/ui/button'
 import { Input } from './components/ui/input'
-import { ArrowRightIcon } from 'lucide-react'
+import { ArrowRightIcon, Route } from 'lucide-react'
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from './components/ui/navigation-menu'
 import {
   Sheet,
@@ -22,7 +22,8 @@ import { Menu } from 'lucide-react';
 import NavBar from './components/NavBar'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './components/ui/carousel'
 import { Card, CardContent } from "./components/ui/card"
-
+import Product from './pages/product'
+import { createBrowserRouter } from 'react-router-dom'
 
 
 
@@ -95,7 +96,6 @@ const App = () => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-
       </div>
     </>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from './ui/navigation-menu'
 import { Button } from './ui/button'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -13,14 +14,19 @@ const NavBar = () => {
     <div>
         <NavigationMenu>
           <NavigationMenuList className="flex flex-col sm:flex-row gap-2 items-center">
-            <NavigationMenuItem >
+            <Link to="/product">
+            <NavigationMenuItem>
               <NavigationMenuTrigger>Products</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <NavigationMenuLink>Clothes</NavigationMenuLink>
                 <NavigationMenuLink>Shoes</NavigationMenuLink>
                 <NavigationMenuLink>Accories</NavigationMenuLink>
+                <NavigationMenuLink>Other</NavigationMenuLink>
               </NavigationMenuContent>
+            
+
             </NavigationMenuItem>
+            </Link>
             <NavigationMenuItem >
               <NavigationMenuTrigger>Grocessry</NavigationMenuTrigger>
               <NavigationMenuContent>
